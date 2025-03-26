@@ -1,9 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
 import './card.css'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export const Card = ({ id, imgUrl, tag, title, date, readingTime, linkText, linkUrl }: { id: string, imgUrl: string, tag: string, title: string, date: string, readingTime: string, linkText: string, linkUrl: string }) => {
+  const router = useRouter();
+
+  const handleClick = (url: string) => {
+    router.push(url)
+  }
+
   return (
     <div className='flex flex-col gap-4 w-auto'>
       <Image
@@ -32,12 +38,12 @@ export const Card = ({ id, imgUrl, tag, title, date, readingTime, linkText, link
           />{readingTime}</div>
         </div>
         <div>
-          <Link className='link' href={`${linkUrl}${id}`}>{linkText}<Image
+          <div className='link' onClick={() => handleClick(`${linkUrl}${id}`)}>{linkText}<Image
             src="/assets/Arrow.svg"
             alt="Example image"
             width={18}
             height={15}
-          /></Link>
+          /></div>
         </div>
       </div>
     </div>
