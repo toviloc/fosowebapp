@@ -1,0 +1,20 @@
+.sub-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sub-list li {
+  padding-left: 10px;
+  text-indent: -10px;
+}
+.sub-list li::before {
+  content: "";
+  font-weight: bold;
+  display: inline-block;
+  width: 10px;
+  margin-right: 5px;
+}

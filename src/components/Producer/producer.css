@@ -1,0 +1,16 @@
+.line {
+  rotate: -90 deg;
+  border: 1px solid #d9e1e7;
+}
+.fontStyle {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #667f93;
+}
+.dateTime {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}

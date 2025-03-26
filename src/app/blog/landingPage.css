@@ -1,0 +1,41 @@
+.fosoSpan {
+  font-family: Raleway;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 100px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: capitalize;
+  background: linear-gradient(90deg, #4fab88, #4fab88, #94e2c8, #4fab88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.whiteSpace {
+  font-family: Raleway;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 100px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: capitalize;
+  display: inline-block;
+}
+.typography {
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 100px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: capitalize;
+}
+.underline {
+  height: 28;
+  border-radius: 40px;
+  background: #a3eed6;
+  position: relative;
+  top: -44px;
+  z-index: -1;
+}

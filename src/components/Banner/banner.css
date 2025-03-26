@@ -1,0 +1,7 @@
+.banner {
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  background: linear-gradient(to bottom, #0375f3, #013ea2);
+  color: #ffffff;
+}
