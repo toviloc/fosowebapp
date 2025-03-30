@@ -101,7 +101,7 @@ export default function Page() {
                       }
                       {
                         content.type === "header" &&
-                        <section key={`header-${idx}`} id={`header-${idx}`}>
+                        <section key={`header-${idx}`} id={`header-${content.header}`}>
                           <span className='header2'>{content.header}</span>
                         </section>
                       }
@@ -131,7 +131,7 @@ export default function Page() {
                         content.type === "sub" &&
                         <div key={`sub-${idx}`}>{content.container?.map((itm, contIdx) =>
                         (
-                          <section key={contIdx} id={`sub-${contIdx}`} className='flex flex-col mb-6'>
+                          <section key={contIdx} id={`sub-${itm.header}`} className='flex flex-col mb-6'>
                             <span className='header3'>{itm.header}</span>
                             <span>{itm.text}</span>
                           </section>

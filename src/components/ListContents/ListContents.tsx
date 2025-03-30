@@ -17,8 +17,8 @@ export const ListContents = ({ dataPost }: { dataPost: Post }) => {
                 <div key={idx}>
                   {
                     content.type === "header" &&
-                    <Link href={`#header-${idx}`}>
-                      <span key={`header-${idx}`}>{content.header}</span>
+                    <Link href={`#header-${content.header}`}>
+                      <span>{content.header}</span>
                     </Link>
                   }
                   {
@@ -28,7 +28,7 @@ export const ListContents = ({ dataPost }: { dataPost: Post }) => {
                         content.container?.map((itm, contIdx) =>
                         (
                           <li key={contIdx}>
-                            <Link href={`#sub-${contIdx}`}>
+                            <Link href={`#sub-${itm.header}`}>
                               {itm.header}
                             </Link>
                           </li>
