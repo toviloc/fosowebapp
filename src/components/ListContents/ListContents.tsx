@@ -1,8 +1,10 @@
 import { Post } from '@/types/post'
 import React from 'react'
 import './listContents.css'
+import Link from 'next/link'
 
 export const ListContents = ({ dataPost }: { dataPost: Post }) => {
+
   return (
     <div>
       {
@@ -15,7 +17,9 @@ export const ListContents = ({ dataPost }: { dataPost: Post }) => {
                 <div key={idx}>
                   {
                     content.type === "header" &&
-                    <span key={`text-${idx}`}>{content.header}</span>
+                    <Link href={`#header-${idx}`}>
+                      <span key={`header-${idx}`}>{content.header}</span>
+                    </Link>
                   }
                   {
                     content.type === "sub" &&
@@ -24,7 +28,9 @@ export const ListContents = ({ dataPost }: { dataPost: Post }) => {
                         content.container?.map((itm, contIdx) =>
                         (
                           <li key={contIdx}>
-                            {itm.header}
+                            <Link href={`#sub-${contIdx}`}>
+                              {itm.header}
+                            </Link>
                           </li>
                         ))}
                     </ul>

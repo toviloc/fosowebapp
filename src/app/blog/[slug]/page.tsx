@@ -101,7 +101,9 @@ export default function Page() {
                       }
                       {
                         content.type === "header" &&
-                        <span key={`header-${idx}`} className='header2'>{content.header}</span>
+                        <section key={`header-${idx}`} id={`header-${idx}`}>
+                          <span className='header2'>{content.header}</span>
+                        </section>
                       }
                       {
                         content.type === "text" &&
@@ -109,7 +111,7 @@ export default function Page() {
                       }
                       {
                         content.type === "listTop" &&
-                        <ul className='list-disc' key={`listTop-${idx}`}>{content.listTop?.map((itm, contIdx) =>
+                        <ul className='list-sub list-sub-marker' key={`listTop-${idx}`}>{content.listTop?.map((itm, contIdx) =>
                         (
                           <li key={contIdx}>
                             <span className='header3'>{itm.listText}</span><span>{itm.meaning}</span>
@@ -119,7 +121,7 @@ export default function Page() {
                       }
                       {
                         content.type === "list" &&
-                        <ul className='list-disc' key={`list-${idx}`}>{content.list?.map((itm, lstIdx) =>
+                        <ul className='list-sub' key={`list-${idx}`}>{content.list?.map((itm, lstIdx) =>
                           <li key={lstIdx}>{itm}</li>
                         )
                         }
@@ -129,10 +131,10 @@ export default function Page() {
                         content.type === "sub" &&
                         <div key={`sub-${idx}`}>{content.container?.map((itm, contIdx) =>
                         (
-                          <div key={contIdx} className='flex flex-col mb-6'>
+                          <section key={contIdx} id={`sub-${contIdx}`} className='flex flex-col mb-6'>
                             <span className='header3'>{itm.header}</span>
                             <span>{itm.text}</span>
-                          </div>
+                          </section>
                         ))}
                         </div>
                       }
@@ -180,6 +182,6 @@ export default function Page() {
       <div className="p-4">
         <BackToTop />
       </div>
-    </div>
+    </div >
   )
 }

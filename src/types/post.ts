@@ -13,9 +13,9 @@ export interface Post {
           note?: string;
           header?: string;
           text?: string;
-          endText?: string;
           listTop?: [{ listText?: string; meaning?: string }];
           list?: string[];
+          endText?: string;
           container?: [{ header?: string; text?: string }];
           textList?: string[];
         }
