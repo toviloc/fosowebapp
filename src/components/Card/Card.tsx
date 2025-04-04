@@ -3,7 +3,7 @@ import Image from 'next/image'
 import './card.css'
 import { useRouter } from 'next/navigation'
 
-export const Card = ({ id, imgUrl, tag, title, date, readingTime, linkText, linkUrl }: { id: string, imgUrl: string, tag: string, title: string, date: string, readingTime: string, linkText: string, linkUrl: string }) => {
+export const Card = ({ id, imgUrl, tag, title, date, readingTime, linkText, linkUrl, className }: { id: string, imgUrl: string, tag: string, title: string, date: string, readingTime: string, linkText: string, linkUrl: string, className: string }) => {
   const router = useRouter();
 
   const handleClick = (url: string) => {
@@ -11,7 +11,7 @@ export const Card = ({ id, imgUrl, tag, title, date, readingTime, linkText, link
   }
 
   return (
-    <div className='flex flex-col gap-4 w-auto'>
+    <div className={`flex flex-col gap-4 ${className}`}>
       <Image
         src={imgUrl || 'logo.svg'}
         alt="Example image"

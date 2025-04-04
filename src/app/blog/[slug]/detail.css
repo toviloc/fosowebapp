@@ -1,7 +1,8 @@
 .detail {
-  display: flex;
+  display: block;
   padding: 8px 240px;
   gap: 48px;
+  margin-bottom: 192px;
 }
 .header2 {
   font-weight: 800;

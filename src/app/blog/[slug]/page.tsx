@@ -10,10 +10,10 @@ import './detail.css'
 import { Banner } from '@/components/Banner/Banner';
 import { Producer } from '@/components/Producer/Producer';
 import { Feeling } from '@/components/Feeling/Feeling';
-import { Card } from '@/components/Card/Card';
 import { BackToTop } from '@/components/BackToTop/BackToTop';
 import Link from 'next/link';
 import { ListContents } from '@/components/ListContents/ListContents';
+import { Carousel } from '@/components/Carousel/Carousel';
 
 
 export default function Page() {
@@ -27,39 +27,39 @@ export default function Page() {
     setPostData(data)
   }, []);
   return (
-    <div className='detail mb-48'>
-      <div className='flex flex-col gap-2 w-[10%]'>
+    <div className='detail'>
+      <div className='flex flex-col gap-2 w-[10%] fixed top-32 left-32'>
         <div className='font-extrabold text-base'>Chia sẻ</div>
         <div className='flex gap-2 flex-col'>
-          <Link href=''>
+          <Link href='https://chat.zalo.me/'>
             <Image
               src='/assets/zalo.svg'
               alt="Example image"
               width={48}
               height={48} />
           </Link>
-          <Link href=''>
+          <Link href='https://www.facebook.com/'>
             <Image
               src='/assets/facebook.svg'
               alt="Example image"
               width={48}
               height={48} />
           </Link>
-          <Link href=''>
+          <Link href='https://x.com/'>
             <Image
               src='/assets/X.svg'
               alt="Example image"
               width={48}
               height={48} />
           </Link>
-          <Link href=''>
+          <Link href='https://www.linkedin.com/'>
             <Image
               src='/assets/linkedIn.svg'
               alt="Example image"
               width={48}
               height={48} />
           </Link>
-          <Link href=''>
+          <Link href='https://www.reddit.com/'>
             <Image
               src='/assets/redit.svg'
               alt="Example image"
@@ -172,11 +172,7 @@ export default function Page() {
         </div>
         <div className='flex flex-col gap-6'>
           <div className='font-extrabold text-4xl'>Bài viết liên quan</div>
-          <div className='flex w-[100%] gap-6'>
-            <Card id={postData?.id || ''} imgUrl={postData?.card.imgUrl || ''} linkText={postData?.card.linkText || ''} linkUrl={postData?.card.linkUrl || ''} date={postData?.card.date || ''} readingTime={postData?.card.readingTime || ''} tag={postData?.card.tag || ''} title={postData?.card.title || ''} />
-            <Card id={postData?.id || ''} imgUrl={postData?.card.imgUrl || ''} linkText={postData?.card.linkText || ''} linkUrl={postData?.card.linkUrl || ''} date={postData?.card.date || ''} readingTime={postData?.card.readingTime || ''} tag={postData?.card.tag || ''} title={postData?.card.title || ''} />
-            <Card id={postData?.id || ''} imgUrl={postData?.card.imgUrl || ''} linkText={postData?.card.linkText || ''} linkUrl={postData?.card.linkUrl || ''} date={postData?.card.date || ''} readingTime={postData?.card.readingTime || ''} tag={postData?.card.tag || ''} title={postData?.card.title || ''} />
-          </div>
+          <Carousel />
         </div>
       </div>
       <div className="p-4">

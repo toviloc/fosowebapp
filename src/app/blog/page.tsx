@@ -62,7 +62,14 @@ export default function Page() {
         <div className='flex flex-col gap-6'>
           <div className='text-4xl font-bold'>Tất cả bài viết</div>
           <div><Banner imgUrl='/assets/banner2.svg' fontStyle='font-bold text-4xl w-[50%]' direction='flex-row-reverse' additionalClass='' linkText='Tham gia ngay' linkUrl='' text='Gia nhập cộng đồng FMRP – Kết nối, chia sẻ, cùng phát triển!' /></div>
-          <div className='grid grid-cols-2 gap-4'>{paginatedPosts.map((post, idx) => <div key={idx}><Card id={post.id} imgUrl={post.card.imgUrl} tag={post.card.tag} title={post.card.title} date={post.card.date} readingTime={post.card.readingTime} linkText={post.card.linkText} linkUrl={post.card.linkUrl} /></div>)}</div>
+          <div className='grid grid-cols-2 gap-4'>
+            {
+              paginatedPosts.map((post, idx) =>
+                <div key={idx}>
+                  <Card id={post.id} className='w-auto' imgUrl={post.card.imgUrl} tag={post.card.tag} title={post.card.title} date={post.card.date} readingTime={post.card.readingTime} linkText={post.card.linkText} linkUrl={post.card.linkUrl} />
+                </div>)
+            }
+          </div>
         </div>
         <div className='flex flex-col gap-8'>
           <div>
